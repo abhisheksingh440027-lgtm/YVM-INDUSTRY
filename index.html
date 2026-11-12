@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>YVM Industry | Textile Excellence</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --dark: #111827;
+      --gold: #f59e0b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --text: #374151;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav {
+      background: rgba(17, 24, 39, 0.98);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* CUSTOM YVM LOGO */
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-text strong {
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    .brand-text span {
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-top: 5px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--gold);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 620px;
+      background:
+        linear-gradient(rgba(17,24,39,0.78), rgba(17,24,39,0.88)),
+        url("https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1800&q=85");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+      color: #e5e7eb;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #d97706;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* ================= GENERAL ================= */
+
+    section {
+      padding: 85px 9%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: auto auto 50px;
+      color: #6b7280;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .about-text h3 {
+      font-size: 30px;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services {
+      background: var(--dark);
+    }
+
+    .services .section-title {
+      color: white;
+    }
+
+    .services .section-subtitle {
+      color: #d1d5db;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 35px 25px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    /* ================= PRODUCT GALLERY ================= */
+
+    .gallery {
+      background: #f1f5f9;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      height: 280px;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      color: white;
+      padding: 25px;
+    }
+
+    .gallery-overlay h3 {
+      font-size: 20px;
+    }
+
+    /* ================= FOUNDER ================= */
+
+    .founder-card {
+      max-width: 850px;
+      margin: auto;
+      padding: 50px;
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .founder-avatar {
+      width: 110px;
+      height: 110px;
+      background: var(--gold);
+      color: white;
+      margin: auto auto 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: bold;
+    }
+
+    .founder-card h2 {
+      color: var(--dark);
+    }
+
+    .designation {
+      color: var(--gold);
+      font-weight: bold;
+      margin: 8px 0 20px;
+    }
+
+    /* ================= ENQUIRY ================= */
+
+    .enquiry {
+      background: var(--dark);
+    }
+
+    .enquiry .section-title {
+      color: white;
+    }
+
+    .enquiry .section-subtitle {
+      color: #d1d5db;
+    }
+
+    .form-box {
+      max-width: 750px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--gold);
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      background: var(--gold);
+      color: white;
+      padding: 15px;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #d97706;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-box {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+      padding: 15px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .instagram-btn {
+      background: #E1306C;
+      color: white;
+      padding: 15px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* FLOATING WHATSAPP */
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      background: #25D366;
+      color: white;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      z-index: 1000;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #080d17;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 850px) {
+
+      nav {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .about-box {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 7%;
+      }
+
+      .founder-card,
+      .form-box {
+        padding: 30px 20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+  <a href="#home" class="brand">
+
+    <div class="logo-icon">YVM</div>
+
+    <div class="brand-text">
+      <strong>YVM</strong>
+      <span>INDUSTRY</span>
+    </div>
+
+  </a>
+
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#founder">Founder</a></li>
+    <li><a href="#enquiry">Enquiry</a></li>
+  </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <h1>We Create <span>Quality Textiles</span></h1>
+
+    <p>
+      Welcome to YVM Industry — where quality, innovation and
+      craftsmanship come together to shape the future of textiles.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#products" class="btn btn-primary">
+        Explore Products
+      </a>
+
+      <a href="https://wa.me/918953666289"
+         class="btn btn-outline"
+         target="_blank">
+        💬 WhatsApp Us
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <h2 class="section-title">About YVM Industry</h2>
+
+  <p class="section-subtitle">
+    Building a strong future through quality textile work and innovation.
+  </p>
+
+  <div class="about-box">
+
+    <div class="about-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80"
+        alt="Textile Work">
+
+    </div>
+
+    <div class="about-text">
+
+      <h3>Textile Excellence</h3>
+
+      <p>
+        YVM Industry is a growing textile-focused company committed to
+        quality, innovation and reliable production.
+      </p>
+
+      <p>
+        We believe in combining traditional craftsmanship with modern
+        ideas to deliver better textile solutions.
+      </p>
+
+      <p>
+        <strong>Founded:</strong> 1st June 2026
+      </p>
+
+      <p>
+        <strong>Industry:</strong> Textile & Fabric Work
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services">
+
+  <h2 class="section-title">What We Do</h2>
+
+  <p class="section-subtitle">
+    Quality-driven solutions for the textile industry.
+  </p>
+
+  <div class="service-grid">
+
+    <div class="service-card">
+
+      <div class="service-icon">🧵</div>
+
+      <h3>Textile Work</h3>
+
+      <p>
+        Dedicated textile production with a focus on quality and reliability.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="service-icon">🪡</div>
+
+      <h3>Fabric Solutions</h3>
+
+      <p>
+        Modern and practical solutions designed for textile requirements.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="service-icon">🏭</div>
+
+      <h3>Industry Growth</h3>
+
+      <p>
+        Building towards innovation and excellence in the textile sector.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCT GALLERY -->
+
+<section class="gallery" id="products">
+
+  <h2 class="section-title">Our Product Gallery</h2>
+
+  <p class="section-subtitle">
+    Explore the world of fabrics, textures and textile craftsmanship.
+  </p>
+
+  <div class="gallery-grid">
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=900&q=80"
+        alt="Textile Fabric">
+
+      <div class="gallery-overlay">
+        <h3>Premium Fabrics</h3>
+      </div>
+
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+        alt="Fabric Collection">
+
+      <div class="gallery-overlay">
+        <h3>Fabric Collection</h3>
+      </div>
+
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=900&q=80"
+        alt="Textile Design">
+
+      <div class="gallery-overlay">
+        <h3>Textile Design</h3>
+      </div>
+
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=900&q=80"
+        alt="Clothing Textile">
+
+      <div class="gallery-overlay">
+        <h3>Quality Materials</h3>
+      </div>
+
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=80"
+        alt="Fashion Textile">
+
+      <div class="gallery-overlay">
+        <h3>Modern Textile</h3>
+      </div>
+
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80"
+        alt="Textile Collection">
+
+      <div class="gallery-overlay">
+        <h3>Creative Collection</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOUNDER -->
+
+<section id="founder">
+
+  <h2 class="section-title">Meet Our Founder</h2>
+
+  <div class="founder-card">
+
+    <div class="founder-avatar">AY</div>
+
+    <h2>Abhishek Yadav</h2>
+
+    <p class="designation">
+      Founder & Visionary — YVM Industry
+    </p>
+
+    <p>
+      YVM Industry was founded by <strong>Abhishek Yadav</strong> with
+      a vision to build a trusted and innovative name in the textile sector.
+    </p>
+
+    <br>
+
+    <p>
+      <strong>Established:</strong> 1st June 2026
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ENQUIRY -->
+
+<section class="enquiry" id="enquiry">
+
+  <h2 class="section-title">Send an Enquiry</h2>
+
+  <p class="section-subtitle">
+    Tell us about your requirements and we will get back to you.
+  </p>
+
+  <div class="form-box">
+
+    <form onsubmit="sendWhatsApp(); return false;">
+
+      <div class="form-group">
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Your Name"
+          required>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Your Phone Number"
+          required>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <select id="service">
+
+          <option value="">Select Requirement</option>
+
+          <option>Textile Work</option>
+
+          <option>Fabric Enquiry</option>
+
+          <option>Bulk Order</option>
+
+          <option>Business Collaboration</option>
+
+          <option>Other</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <textarea
+          id="message"
+          placeholder="Write your enquiry..."
+          required></textarea>
+
+      </div>
+
+
+      <button type="submit" class="submit-btn">
+        Send Enquiry on WhatsApp 💬
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <h2 class="section-title">Connect With Us</h2>
+
+  <p class="section-subtitle">
+
+    Connect with YVM Industry for business enquiries and collaborations.
+
+  </p>
+
+  <div class="contact-box">
+
+    <h3>YVM Industry</h3>
+
+    <p><strong>Founder:</strong> Abhishek Yadav</p>
+
+    <p><strong>Established:</strong> 1st June 2026</p>
+
+
+    <div class="contact-buttons">
+
+      <a
+        href="https://wa.me/918953666289"
+        target="_blank"
+        class="whatsapp-btn">
+
+        💬 WhatsApp: 8953666289
+
+      </a>
+
+
+      <a
+        href="https://www.instagram.com/curly4abhi/"
+        target="_blank"
+        class="instagram-btn">
+
+        📸 Instagram: @curly4abhi
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FLOATING WHATSAPP BUTTON -->
+
+<a
+  href="https://wa.me/918953666289"
+  target="_blank"
+  class="floating-whatsapp">
+
+  💬
+
+</a>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>
+    © 2026 <strong>YVM Industry</strong>. All Rights Reserved.
+  </p>
+
+  <p>
+    Founded by Abhishek Yadav | Established 1st June 2026
+  </p>
+
+</footer>
+
+
+<!-- WHATSAPP ENQUIRY SCRIPT -->
+
+<script>
+
+function sendWhatsApp() {
+
+  var name = document.getElementById("name").value;
+
+  var phone = document.getElementById("phone").value;
+
+  var service = document.getElementById("service").value;
+
+  var message = document.getElementById("message").value;
+
+
+  var whatsappMessage =
+  "Hello YVM Industry!%0A%0A" +
+
+  "Name: " + name + "%0A" +
+
+  "Phone: " + phone + "%0A" +
+
+  "Requirement: " + service + "%0A%0A" +
+
+  "Enquiry: " + message;
+
+
+  var whatsappURL =
+  "https://wa.me/918953666289?text=" + whatsappMessage;
+
+
+  window.open(whatsappURL, "_blank");
+
+}
+
+</script>
+
+</body>
+</html>
